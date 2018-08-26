@@ -1,0 +1,9 @@
+{
+  "name": "TelegramBotCafe",
+  "version": "1.0.0",
+  "descrition": "",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py"
+  }
+}
