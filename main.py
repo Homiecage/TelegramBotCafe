@@ -39,12 +39,16 @@ def handle_text(message):
         bot.send_message(message.from_user.id, 'Все правильно?', reply_markup=user_markup)
     elif message.text == "Да, оплатить заказ":
         user_markup = telebot.types.ReplyKeyboardMarkup()
-        user_markup.row('Оплата')
+        user_markup.row('Оплата','Нет, хочу поменять заказ')
         bot.send_message(message.from_user.id, 'Okey', reply_markup=user_markup)
     elif message.text == "Нет, хочу поменять заказ":
         user_markup = telebot.types.ReplyKeyboardMarkup()
         user_markup.row('Выбрать кофе')
         bot.send_message(message.from_user.id, 'Выберите объем', reply_markup=user_markup)
+    elif message.text == "Оплата":
+        user_markup = telebot.types.ReplyKeyboardMarkup()
+        user_markup.row('Отправить деньги','Нет, хочу поменять заказ')
+        bot.send_message(message.from_user.id, 'Отправьте деньги на этот etherium-кошелек:'+'0x7861D09Eb3A1bBBd9Ff493dcF8d2ded089144c39', reply_markup=user_markup)
     else:
         print("Ваш запрос не распознан")
 
